@@ -5,7 +5,12 @@
       <app-chat-message [text]="'Escribe el texto que quieres que revise'" />
       @for (message of messages(); track $index) {
         @if (message.isGpt) {
-          <app-chat-message [text]="message.text" />
+          <app-gpt-message-ortography
+            [text]="message.text"
+            [errors]="message.info!.errors"
+            [text]="message.text"
+            [userScore]="message.info!.userScore"
+          />
         } @else {
           <app-my-message [text]="message.text" />
         }
@@ -17,20 +22,9 @@
   </div>
 
   <!-- MessageBox -->
-  <!-- <app-text-message-box
+  <app-text-message-box
     placeholder="Escribe aquí lo que deseas"
     (onMessage)="handleMessage($event)"
-  /> -->
-  <!-- <app-text-message-box-file
-    placeholder="Escribe aquí lo que deseas"
-    (onMessage)="handleMessageFile($event)"
-  /> -->
-  <app-text-message-box-select
-    placeholder="Escribe aquí lo que deseas"
-    [options]="[
-      { id: '1', text: 'Opción 1' },
-      { id: '2', text: 'Opción 2' }
-    ]"
-    (onMessage)="handleMessageSelect($event)"
+    [disableCorrections]="true"
   />
 </div>
