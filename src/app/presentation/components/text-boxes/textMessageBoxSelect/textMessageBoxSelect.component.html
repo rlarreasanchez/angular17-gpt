@@ -17,9 +17,9 @@
         formControlName="selectedOption"
         class="w-2/5 h-10 pl-4 ml-5 text-gray-800 border rounded-xl focus:outline-none focus:border-indigo-300"
       >
-        <option value="">Seleccione</option>
+        <option value="">Seleccione una opción...</option>
         @for (option of options; track option.id) {
-        <option [value]="option.id">{{ option.text }}</option>
+          <option [value]="option.id">{{ option.text }}</option>
         }
       </select>
     </div>
