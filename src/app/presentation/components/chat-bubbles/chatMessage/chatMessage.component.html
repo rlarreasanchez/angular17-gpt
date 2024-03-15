@@ -9,6 +9,10 @@
       class="relative px-4 pt-3 pb-2 ml-3 text-sm bg-black bg-opacity-25 shadow rounded-xl"
     >
       <markdown>{{ text }}</markdown>
+
+      @if (audioUrl) {
+        <audio controls [src]="audioUrl" autoplay class="w-full"></audio>
+      }
     </div>
   </div>
 </div>
