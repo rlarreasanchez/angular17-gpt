@@ -1,0 +1,29 @@
+<div class="col-start-1 col-end-9 p-3 rounded-lg">
+  <div class="flex flex-row items-start">
+    <div
+      class="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-green-600 rounded-full"
+    >
+      G
+    </div>
+    <div
+      class="relative px-4 pt-3 pb-2 ml-3 text-sm bg-black bg-opacity-25 shadow rounded-xl"
+    >
+      <!-- <img
+        [src]="imageInfo.url"
+        [alt]="imageInfo.alt"
+        class="object-cover rounded-xl"
+        width="1024"
+        height="1024"
+        (click)="handleClick()"
+      /> -->
+      <canvas
+        width="1024"
+        height="1024"
+        #canvas
+        (mousedown)="onMouseDown($event)"
+        (mousemove)="onMouseMove($event)"
+        (mouseup)="onMouseUp()"
+      ></canvas>
+    </div>
+  </div>
+</div>
