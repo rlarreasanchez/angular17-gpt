@@ -28,16 +28,7 @@ import { OpenAiService } from 'app/presentation/services/openai.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class ImageTunningPageComponent {
-  public messages = signal<Message[]>([
-    {
-      isGpt: true,
-      text: 'A character from Dragon Ball Z',
-      imageInfo: {
-        alt: 'A character from Dragon Ball Z',
-        url: 'http://localhost:3000/gpt/image-generation/1710746717585.png',
-      },
-    },
-  ]);
+  public messages = signal<Message[]>([]);
   public isLoading = signal<boolean>(false);
   public openAiService = inject(OpenAiService);
 
